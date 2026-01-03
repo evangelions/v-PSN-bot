@@ -5,6 +5,7 @@ from modules.api import APIError
 DECIMAL_RE = re.compile(r"\d+")
 
 
+
 class PSPrices:
     def __init__(self, url: str) -> None:
         match = DECIMAL_RE.search(url)
