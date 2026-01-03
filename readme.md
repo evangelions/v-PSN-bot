@@ -128,18 +128,32 @@ The bot will now appear in your Discord server with rotating statuses.
 ### 6. Test Commands
 
 Use slash commands in Discord:
-- /user-search online_id:YourPSNUsername
-- /game-search query:God of War
-- /recent-games username:YourPSNUsername
-- /bot-info
-- /change-language
+
+**PSN Group:**
+
+- /user-search 
+- /game-search 
+- /recent-games 
+
   
-**Avatar group:**
+**Avatar Group:**
+
 - /avatar verify
-- /avatar add_to_cart
-- /avatar remove_from_cart
+- /avatar add
+- /avatar remove
+- /avatar check
+- /avatar help
 
+**Owner Group**
 
+- /toggle-ban
+- /refresh-psn-token
+
+**Other**
+
+- /bot-infos
+
+  
 ### Common Issues & Fixes
 
 - Bot not responding to commands?
