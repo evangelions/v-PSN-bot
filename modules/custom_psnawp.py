@@ -6,6 +6,7 @@ from psnawp_api.core.psnawp_exceptions import PSNAWPNotFound
 from psnawp_api.utils.endpoints import BASE_PATH
 from psnawp_api.utils.request_builder import RequestBuilder
 
+
 class Search:
     def __init__(self, request_builder: RequestBuilder):
         """The Search class provides the information and methods for searching resources on playstation network.
