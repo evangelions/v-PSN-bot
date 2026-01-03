@@ -10,6 +10,7 @@ from modules.api.common import APIError
 USERNAME_PATTERN = re.compile(r"^[a-zA-Z0-9_-]+$")
 
 
+
 class PSNOperation(Enum):
     CHECK_AVATAR = 1
     ADD_TO_CART = 2
