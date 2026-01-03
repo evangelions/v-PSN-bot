@@ -10,7 +10,6 @@ A custom Discord bot for retrieving PlayStation Network (PSN) details like profi
 - **Recent Games** – List of recently played titles
 - **Avatar Tools** – Verify, add to cart, or remove PSN avatars (ephemeral commands)
 - **Bot Info** – Ping, server list, credits
-- **Multi-Language** – English & French (easy to add more)
 - **Owner Tools** – Ban/unban users, refresh PSN token
 - **Customizable** – Status rotation, channel restrictions, invite links
 
