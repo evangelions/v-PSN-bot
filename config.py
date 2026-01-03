@@ -2,7 +2,7 @@ import discord
 
 # Set the playing status of the bot, followed by the activity type
 RICH_PRESENCES = {
-    "watching your accounts!": discord.ActivityType.watching,
+    "BooHaHaHaa!": discord.ActivityType.watching,
     "By v": discord.ActivityType.playing,
 }
 
