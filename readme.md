@@ -76,12 +76,24 @@ pip install discord.py==2.3.2
 
 **IGDB (Twitch) Keys**
 
-1. Go to Twitch Developer Console
-2. Click Register Your Application
-3. Name: anything (e.g., "PSN Bot")
-4. OAuth Redirect URL: https://localhost
-5. Category: Application Integration
-6. Create → copy Client ID and Client Secret
+1. Go to the Twitch Developer Console: https://dev.twitch.tv/console
+2. Log in with your Twitch account (create one if you don't have it)
+3. On the top right, click Applications (or directly go to: https://dev.twitch.tv/console/apps)
+4. Click Register Your Application (or Create button).
+5. Fill in the form:
+- Name: Anything you want
+- OAuth Redirect URLs: Put https://localhost (or http://localhost — it doesn't matter, we won't use it)
+- Category: Select Application Integration (or whatever fits, it's not strict)
+- Client Type: Make sure it's Confidential (this is important — it allows a Client Secret to show up)
+6. copy client id, and secret
+
+
+Click Create.
+Now you'll see your new app in the list. Click on it (or Manage).
+You'll see:Client ID: A long string like abc123def456ghi789 — copy this.
+Client Secret: Click New Secret (or Generate Secret) if it's not shown → Confirm → Copy the secret that appears (it's hidden after).
+
+
 
 ### 4. Configure the Bot
 
