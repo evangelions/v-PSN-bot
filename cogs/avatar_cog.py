@@ -7,6 +7,7 @@ import config
 from modules.api.common import APIError
 from modules.api.psn import PSNRequest
 
+
 valid_regions = [
     "ar-AE",
     "ar-BH",
