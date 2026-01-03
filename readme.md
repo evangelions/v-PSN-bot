@@ -1,8 +1,9 @@
 # Discord PSN Bot
 
-## Setup
+## Setup Guide
 
-- Go to the Discord Developer Portal, create a new bot, and enable every privileged gateway intents.
+- Go to the Discord Developer Portal, create a new bot, and enable all privileged gateway intents.
+
 - Obtain your Twitch app ID and app secret:
     1. Go to the Twitch Developer Console (https://dev.twitch.tv/console/apps)
     2. Create a new application or select an existing one (Use `https://localhost` as redirect URL)
