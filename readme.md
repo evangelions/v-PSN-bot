@@ -1,4 +1,4 @@
-# v's PSN Bot
+# PSN Bot
 
 A custom Discord bot for retrieving PlayStation Network (PSN) details like profiles, trophies, recent games, game searches, and more. Built from the ground up by **evangelions**!
 
