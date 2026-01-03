@@ -138,7 +138,6 @@ Use slash commands in Discord:
   
 **Avatar Group:**
 
-- /avatar verify
 - /avatar add
 - /avatar remove
 - /avatar check
