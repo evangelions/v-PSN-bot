@@ -67,11 +67,12 @@ pip install discord.py==2.3.2
 **PSN NPSSO Cookie**
 
 1. Open Chrome/Firefox and log in to playstation.com
-2. Press F12 to open Developer Tools → go to Network tab
+2. In the same browser tab (don't close or log out), open a new tab and paste this exact URL: https://ca.account.sony.com/api/v1/ssocookie
 3. Refresh the page
-4. Search for any request (e.g., "profile") → Headers → look for Cookie
-5. Find the value starting with NPSSO= → copy the long string after the =
-6. This is your NPSSO – it expires after a while, so you may need to refresh it later
+4. you'll see a page with JSON text like this:
+   {"npsso":"a_long_64_character_code_here"}
+6. Copy the long code inside the quotes after "npsso": (it's 64 characters).
+7. This is your NPSSO – it expires after a while, so you may need to refresh it later
 
 **IGDB (Twitch) Keys**
 
