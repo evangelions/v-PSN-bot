@@ -253,7 +253,7 @@ class AvatarCog(commands.Cog):
         embed = discord.Embed(
             title="Avatar Commands Tutorial",
             description=(
-ớt                "This guide explains how to use the `/avatar` commands to preview, add, and remove PSN avatars from your PlayStation Store cart.\n\n"
+                "This guide explains how to use the `/avatar` commands to preview, add, and remove PSN avatars from your PlayStation Store cart.\n\n"
                 "**Important:** These commands are private (only you see responses) and require a temporary **NPSSO** token (64-character code). Your account is **not** permanently linked."
             ),
             color=discord.Color.blue()
