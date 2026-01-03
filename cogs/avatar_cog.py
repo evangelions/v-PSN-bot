@@ -248,6 +248,94 @@ class AvatarCog(commands.Cog):
         embed_success.set_footer(text=self.bot.get_text(ctx.author.id, "host2"))
         await ctx.respond(embed=embed_success, ephemeral=True)
 
+    @commands.slash_command(name="avatar-help", description="Shows a detailed tutorial on how to use the avatar commands.")
+    async def avatar_help(self, ctx: discord.ApplicationContext) -> None:
+        embed = discord.Embed(
+            title="Avatar Commands Tutorial",
+            description=(
+                "This guide explains how to use the `/avatar` commands to preview, add, and remove PSN avatars from your PlayStation Store cart.\n\n"
+                "**Important:** These commands are private (only you can see responses) and require a temporary PSN cookie (`pdccws_p`). Your account is **not** permanently linked."
+            ),
+            color=discord.Color.blue()
+        )
+
+        embed.add_field(
+            name="Step 1: Find a Product ID",
+            value=(
+                "1. Go to [psprices.com](https://psprices.com/)\n"
+                "2. Select your region (e.g., United States → en-US)\n"
+                "3. Search or browse avatars: Example → [US Avatars](https://psprices.com/region-us/collection/avatars)\n"
+                "4. Click an avatar → the number in the URL is the `product_id`\n"
+                "   Example: `https://psprices.com/region-us/game/1234567-some-avatar` → **1234567**"
+            ),
+            inline=False
+        )
+
+        embed.add_field(
+            name="Step 2: Get Your pdccws_p Cookie",
+            value=(
+                "1. Log in to [store.playstation.com](https://store.playstation.com)\n"
+                "2. Press **F12** → go to **Application** tab (Chrome) or **Storage** (Firefox)\n"
+                "3. Expand **Cookies** → click `https://store.playstation.com`\n"
+                "4. Find `pdccws_p` → copy the long value\n"
+                "   **Warning: This cookie expires — refresh if you get auth errors**"
+            ),
+            inline=False
+        )
+
+        embed.add_field(
+            name="Step 3: Choose Region",
+            value=(
+                "Use the correct region code that matches your PSN account and the psprices link.\n"
+                "Common ones: `en-US`, `en-GB`, `ja-JP`, `es-MX`, `fr-FR`, etc.\n"
+                "Full list shown if you enter an invalid one."
+            ),
+            inline=False
+        )
+
+        embed.add_field(
+            name="/avatar check — Preview an Avatar",
+            value="Test if an avatar exists and see its image before adding.",
+            inline=False
+        )
+
+        embed.add_field(
+            name="/avatar add — Add to Cart",
+            value=(
+                "Adds the avatar to your PS Store cart.\n"
+                "• Free avatars → instantly downloadable after checkout\n"
+                "• Paid avatars → complete purchase on the website/app/console"
+            ),
+            inline=False
+        )
+
+        embed.add_field(
+            name="/avatar remove — Remove from Cart",
+            value="Removes the avatar from your cart if you change your mind.",
+            inline=False
+        )
+
+        embed.add_field(
+            name="After Adding to Cart",
+            value="Go to [store.playstation.com/cart](https://store.playstation.com/cart) or open the PS App/Console → Cart → Checkout.",
+            inline=False
+        )
+
+        embed.add_field(
+            name="Tips & Safety",
+            value=(
+                "• Never share your `pdccws_p` cookie publicly\n"
+                "• Commands are ephemeral (private)\n"
+                "• Cookie only needed per use — bot doesn't store it\n"
+                "• If you get errors: refresh cookie, double-check ID/region"
+            ),
+            inline=False
+        )
+
+        embed.set_footer(text="v-PSN-bot • Use responsibly")
+
+        await ctx.respond(embed=embed, ephemeral=True)
+
 
 def setup(bot):
     bot.add_cog(AvatarCog(bot))
