@@ -4,6 +4,7 @@ import json
 from datetime import datetime, timedelta
 from urllib.request import urlopen
 
+
 import discord
 import pycountry
 from colorthief import ColorThief
