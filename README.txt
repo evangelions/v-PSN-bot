@@ -12,7 +12,7 @@ fill in the config:
 npsso
 discord bot token
 
-if you get this error ModelNotFoundError:just uninstall and reinstall discord 
+if you get this error ModelNotFoundError: just uninstall and reinstall discord py
 pip uninstall discord.py
 pip install discord.py
 
