@@ -6,7 +6,6 @@ import json
 import config
 
 
-
 class Diverse(commands.Cog):
     def __init__(self, bot):
         self.bot: Bot = bot
@@ -104,57 +103,6 @@ class Diverse(commands.Cog):
         response_message = self.bot.get_text(ctx.author.id, "refresh_token_success")
         await ctx.respond(response_message)
         print("Generated a new NPSSO token.")
-
-    @discord.slash_command(
-        name="change-language",
-        description="Allow you to change your own display language.",
-    )
-    async def change_lang(self, ctx: discord.ApplicationContext):
-        options = [
-            discord.SelectOption(label=lang, description=f"Select {lang}")
-            for lang in self.bot.langs.keys()
-        ]
-
-        class LanguageSelect(discord.ui.Select):
-            def __init__(self, user_id: str, bot: Bot):
-                self.user_id = user_id
-                self.bot = bot
-
-                super().__init__(
-                    placeholder=self.bot.get_text(user_id, "choose_language"),
-                    min_values=1,
-                    max_values=1,
-                    options=options,
-                )
-
-            async def callback(self, interaction: discord.Interaction):
-                if int(interaction.user.id) != int(self.user_id):
-                    return
-
-                selected_language = self.values[0]
-                self.bot.user_langs[str(self.user_id)] = selected_language
-                with open(config.USER_LANGUAGES, "w") as json_file:
-                    json.dump(self.bot.user_langs, json_file)
-
-                await interaction.response.send_message(
-                    self.bot.get_text(
-                        self.user_id, "language_set", language=selected_language
-                    )
-                )
-                print(ctx.author.name, "has set their language to", selected_language)
-
-        class LanguageSelectView(discord.ui.View):
-            def __init__(self, user_id: str, bot: Bot):
-                super().__init__(timeout=None)
-                self.add_item(LanguageSelect(user_id, bot))
-
-        embed = discord.Embed(
-            title=self.bot.get_text(ctx.author.id, "choose_language"),
-            description=self.bot.get_text(ctx.author.id, "select_language"),
-        )
-        view = LanguageSelectView(str(ctx.author.id), self.bot)
-        await ctx.respond(embed=embed, view=view)
-
 
 def setup(bot):
     bot.add_cog(Diverse(bot))
