@@ -2,8 +2,8 @@ import discord
 
 # Set the playing status of the bot, followed by the activity type
 RICH_PRESENCES = {
-    "BooHaHaHaa!": discord.ActivityType.watching,
-    "By v": discord.ActivityType.playing,
+    "Two Anime Girls Kiss": discord.ActivityType.watching,
+    "VR Footjob Simulator": discord.ActivityType.playing,
 }
 
 # Delay in minutes between each presence/status
