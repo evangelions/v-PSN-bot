@@ -2,8 +2,8 @@ import discord
 
 # Set the playing status of the bot, followed by the activity type
 RICH_PRESENCES = {
-    "Over your accounts!": discord.ActivityType.watching,
-    "By KillerJeremy07": discord.ActivityType.playing,
+    "watching your accounts!": discord.ActivityType.watching,
+    "By v": discord.ActivityType.playing,
 }
 
 # Delay in minutes between each presence/status
