@@ -4,7 +4,6 @@ import discord
 import config
 from modules.custom_bot import Bot
 
-
 intents = discord.Intents.all()
 bot = Bot(psn_api_token=config.Secrets.PSN_API, intents=intents, command_prefix="/")
 
