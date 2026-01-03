@@ -9,6 +9,7 @@ from itertools import cycle
 from .game_search import IGDB
 
 
+
 class Bot(commands.Bot):
     def __init__(self, psn_api_token: str, *args, **kwargs):
         super().__init__(*args, **kwargs)
