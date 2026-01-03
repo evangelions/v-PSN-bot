@@ -253,8 +253,8 @@ class AvatarCog(commands.Cog):
         embed = discord.Embed(
             title="Avatar Commands Tutorial",
             description=(
-                "This guide explains how to use the `/avatar` commands to preview, add, and remove PSN avatars from your PlayStation Store cart.\n\n"
-                "**Important:** These commands are private (only you can see responses) and require a temporary PSN cookie (`pdccws_p`). Your account is **not** permanently linked."
+ớt                "This guide explains how to use the `/avatar` commands to preview, add, and remove PSN avatars from your PlayStation Store cart.\n\n"
+                "**Important:** These commands are private (only you see responses) and require a temporary **NPSSO** token (64-character code). Your account is **not** permanently linked."
             ),
             color=discord.Color.blue()
         )
@@ -264,7 +264,7 @@ class AvatarCog(commands.Cog):
             value=(
                 "1. Go to [psprices.com](https://psprices.com/)\n"
                 "2. Select your region (e.g., United States → en-US)\n"
-                "3. Search or browse avatars: Example → [US Avatars](https://psprices.com/region-us/collection/avatars)\n"
+                "3. Search or browse avatars → Example: [US Avatars](https://psprices.com/region-us/collection/avatars)\n"
                 "4. Click an avatar → the number in the URL is the `product_id`\n"
                 "   Example: `https://psprices.com/region-us/game/1234567-some-avatar` → **1234567**"
             ),
@@ -272,13 +272,17 @@ class AvatarCog(commands.Cog):
         )
 
         embed.add_field(
-            name="Step 2: Get Your pdccws_p Cookie",
+            name="Step 2: Get Your NPSSO Token (64-character code)",
             value=(
-                "1. Log in to [store.playstation.com](https://store.playstation.com)\n"
-                "2. Press **F12** → go to **Application** tab (Chrome) or **Storage** (Firefox)\n"
-                "3. Expand **Cookies** → click `https://store.playstation.com`\n"
-                "4. Find `pdccws_p` → copy the long value\n"
-                "   **Warning: This cookie expires — refresh if you get auth errors**"
+                "1. Open your browser and log in to [playstation.com](https://www.playstation.com)\n"
+                "2. **In the same browser tab** (stay logged in), open a **new tab**\n"
+                "3. Paste this exact URL: **https://ca.account.sony.com/api/v1/ssocookie**\n"
+                "4. Refresh the page\n"
+                "5. You’ll see JSON text like:\n"
+                "   `{\"npsso\":\"a_long_64_character_code_here\"}`\n"
+                "6. Copy the long code inside the quotes after `\"npsso\":`\n"
+                "   **This is your NPSSO** (64 characters)\n"
+                "   **It expires after a while — refresh if commands fail**"
             ),
             inline=False
         )
@@ -286,8 +290,8 @@ class AvatarCog(commands.Cog):
         embed.add_field(
             name="Step 3: Choose Region",
             value=(
-                "Use the correct region code that matches your PSN account and the psprices link.\n"
-                "Common ones: `en-US`, `en-GB`, `ja-JP`, `es-MX`, `fr-FR`, etc.\n"
+                "Use the region code that matches your PSN account and the psprices link.\n"
+                "Common: `en-US`, `en-GB`, `ja-JP`, `es-MX`, `fr-FR`, etc.\n"
                 "Full list shown if you enter an invalid one."
             ),
             inline=False
@@ -295,7 +299,7 @@ class AvatarCog(commands.Cog):
 
         embed.add_field(
             name="/avatar check — Preview an Avatar",
-            value="Test if an avatar exists and see its image before adding.",
+            value="Tests if the avatar exists and shows the image.",
             inline=False
         )
 
@@ -303,31 +307,31 @@ class AvatarCog(commands.Cog):
             name="/avatar add — Add to Cart",
             value=(
                 "Adds the avatar to your PS Store cart.\n"
-                "• Free avatars → instantly downloadable after checkout\n"
-                "• Paid avatars → complete purchase on the website/app/console"
+                "• Free avatars → downloadable after checkout\n"
+                "• Paid avatars → complete purchase on website/app/console"
             ),
             inline=False
         )
 
         embed.add_field(
             name="/avatar remove — Remove from Cart",
-            value="Removes the avatar from your cart if you change your mind.",
+            value="Removes the avatar from your cart.",
             inline=False
         )
 
         embed.add_field(
             name="After Adding to Cart",
-            value="Go to [store.playstation.com/cart](https://store.playstation.com/cart) or open the PS App/Console → Cart → Checkout.",
+            value="Go to [store.playstation.com/cart](https://store.playstation.com/cart) or open PS App/Console → Cart → Checkout.",
             inline=False
         )
 
         embed.add_field(
             name="Tips & Safety",
             value=(
-                "• Never share your `pdccws_p` cookie publicly\n"
-                "• Commands are ephemeral (private)\n"
-                "• Cookie only needed per use — bot doesn't store it\n"
-                "• If you get errors: refresh cookie, double-check ID/region"
+                "• Never share your NPSSO publicly\n"
+                "• Commands are private (ephemeral)\n"
+                "• Bot doesn’t store your token\n"
+                "• If errors occur: refresh NPSSO, double-check ID/region"
             ),
             inline=False
         )
