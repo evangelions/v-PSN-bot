@@ -2,7 +2,6 @@ import requests
 from datetime import datetime
 from typing import List, Dict, Optional
 
-
 class Game:
     def __init__(
         self,
