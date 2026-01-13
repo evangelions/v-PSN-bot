@@ -169,7 +169,7 @@ The bot will show "Private" — that's normal.
 
 - [PSNAWP](https://pypi.org/project/psnawp/) – Core PSN profile, trophies, and presence data
 - [IGDB](https://www.igdb.com/) – Game search and details
-- Originally based on work by **Killerjeremy07** (modified and improved by **evangelions**)
+- Originally based on work by **Killerjeremy07** (modified by **evangelions**)
 
 
 
